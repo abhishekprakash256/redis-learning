@@ -54,7 +54,7 @@ sudo apt install redis-server
 
 ### Commands for db 
 
-- set the dict
+- set the dict (strings)
 
 ```sh
 set key value  (to set the value)
@@ -104,9 +104,8 @@ set key value exp 10 (given a time when it expires)
     sismember set_name member_name
     sadd set_name:sub_category member member member (to add item in subcategory)
     scard set_name (to number of the elements)
-    
     ```
-
+  
 - Sorted sets
 
   - They have user or developer define order
@@ -117,20 +116,37 @@ set key value exp 10 (given a time when it expires)
     zadd key items items items   (to add the items)
     zrange key 0 -1 withscores   (to get the value with sorted manner)
     zrevrange key 0 -1 withscores   (to get reverse scores)
-    zrangebyscore key -inf point withscore (point the value in the db)  (withscore the sorting type)\
+    zrangebyscore key -inf point withscore (point the value in the db)  (withscore the sorting type)
     ```
 
 ### Redis Pubs and Subs 
 
 - it's a publishing and reading system 
 - where one publish and other read it 
-- 
 
+### Redis with Python
 
+- Installation 
 
+  ```sh
+  pip install redis
+  ```
 
+- Import 
+
+  ```python
+  import redis
+  ```
+
+- Connect 
+
+  ```python
+  r = redis.Redis(host='localhost', port=6379, db=0)  #defalt port
+  ```
 
 ### Notes - 
+
+- Redis is a multipurpose tool that has the use cases
 
 - Redis is a no SQL database
 
@@ -142,16 +158,26 @@ set key value exp 10 (given a time when it expires)
 
 - Redis can be binded by multiple interface but that is not recommended
 
-- 
+- Redis cluster and sentient 
 
-  
+- Common redis use case 
 
+  - Cache 
+  - Background job queue
+  - User session 
+  - API throttling
+  - Feature Flags
 
+- Pros 
 
+  - data store and job queue
+  - Flexible data structure
+  - Speed
 
+- Cons
 
-
-
+  - RAM usage 
+  - Cannot query by the value
 
 
 ### Links 
@@ -159,5 +185,10 @@ set key value exp 10 (given a time when it expires)
 ```text
 https://linuxize.com/post/how-to-install-and-configure-redis-on-ubuntu-18-04/
 https://redis.io/topics/quickstart
+https://www.youtube.com/watch?v=Koh6piVaYh0
+https://github.com/redis/redis-py
+https://www.youtube.com/watch?v=dlI-xpQxcuE
+https://redis-py.readthedocs.io/en/stable/  (documenatation)
+https://realpython.com/python-redis/  (documenatation)
 ```
 
