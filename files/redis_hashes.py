@@ -3,6 +3,8 @@ working with hashes in redis db
 
 """
 
+#code not working 
+
 import redis
 r = redis.Redis(host='localhost', port=6379, db=0)
 
