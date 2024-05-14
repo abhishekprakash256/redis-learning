@@ -26,7 +26,7 @@ print(random_hash)
 
 
 
-
+#r.delete("test-add")
 
 
 def push_hash():
@@ -38,12 +38,12 @@ def push_hash():
 
     print(set_size)
 
-    while set_size <= 10:
+    while set_size <= 9:
         random_hash = generate_random_hash(6)
         r.sadd("test-add", random_hash)
         set_size = r.scard("test-add") 
 
-#push_hash()
+push_hash()
 
 def print_hashes():
     """
