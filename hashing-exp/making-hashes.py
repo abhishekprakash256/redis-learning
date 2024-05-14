@@ -36,20 +36,22 @@ print(exists)  # Output: True (or 1)
 # Data to hash
 data = b"Hello, World!"
 
+data2 = "https://www.example.com/some/long/url"
+
 # MD5
-md5_hash = hashlib.md5(data).hexdigest()
+md5_hash = hashlib.md5(data2).hexdigest()
 print(f"MD5: {md5_hash}")
 
 # SHA-1
-sha1_hash = hashlib.sha1(data).hexdigest()
+sha1_hash = hashlib.sha1(data2).hexdigest()
 print(f"SHA-1: {sha1_hash}")
 
 # SHA-256
-sha256_hash = hashlib.sha256(data).hexdigest()
+sha256_hash = hashlib.sha256(data2).hexdigest()
 print(f"SHA-256: {sha256_hash}")
 
 # BLAKE2b
-blake2b_hash = hashlib.blake2b(data).hexdigest()
+blake2b_hash = hashlib.blake2b(data2).hexdigest()
 print(f"BLAKE2b: {blake2b_hash}")
 
 
