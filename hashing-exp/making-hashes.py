@@ -54,5 +54,3 @@ print(f"SHA-256: {sha256_hash}")
 blake2b_hash = hashlib.blake2b(data2).hexdigest()
 print(f"BLAKE2b: {blake2b_hash}")
 
-
-
