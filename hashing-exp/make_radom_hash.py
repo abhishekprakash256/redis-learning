@@ -18,15 +18,15 @@ def generate_random_hash(length):
     return hash
 
 # Generate a random hash of length 10
-random_hash = generate_random_hash(6)
+#random_hash = generate_random_hash(6)
 
 # Print the random hash
-print(random_hash)
+#print(random_hash)
 
 
 
-
-#r.delete("test-add")
+#for deleting the hash
+r.delete("test-add")
 
 
 def push_hash():
@@ -39,7 +39,8 @@ def push_hash():
     print(set_size)
 
     while set_size <= 9:
-        random_hash = generate_random_hash(6)
+        random_number = random.randint(5, 10)
+        random_hash = generate_random_hash(random_number)
         r.sadd("test-add", random_hash)
         set_size = r.scard("test-add") 
 
