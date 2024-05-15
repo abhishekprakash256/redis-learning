@@ -1,0 +1,81 @@
+file name -
+
+Folder 
+    - redis (folder)
+        - redis-helper (file)
+            - check redis status (function)
+            - establish the client (function)
+            - helper_fun (class)
+                - make_set (method)
+                - make_hash (method)
+                - add_value_to_set (method)
+                - add_value_to_hash (method)
+                - delete_hash (method)
+                - delete_sets (method)
+                - check_val_exist (method)
+                - get_url (method)
+                    """  
+                    Get the url value from the redis hashset
+                    return the orginal url to flask server
+                    """
+
+    
+    - hashing (folder)
+        - make-hashes (file)
+            - make_hashes (function)
+    
+    - generate-tiny-url (folder)
+        - generate_tiny_url (file)
+            - check_redis_set (function)
+                """
+                check the len of the redis set and add value till
+                the len of the set is 10 
+                """
+            - generate_tiny_url_fun (function)
+                """
+                Pop the element from the redis set 
+                run check_redis_set
+                add the elemnet in the redis hash with url as per key and val
+                return the tiny url 
+                """
+
+
+
+
+
+reqs -- 
+    redis connection maker
+    hashing generation functionlity
+    redis sets pushing the values 
+        - checking doens't exist in the redis hashes as well for keys 
+    generate the value and store in redis hashes and give out 
+    
+    
+
+
+
+API reqs -- 
+
+    generate_tiny_url_fun(long_url: str):
+        """
+        Function to generate tiny url
+        """ 
+        #generate the url 
+        #store in the database 
+
+        return tiny_url
+
+
+
+Input -- 
+    url only as str 
+
+
+output -- 
+    tiny url as str 
+
+
+
+to solve -- 
+
+    
