@@ -8,15 +8,14 @@ Folder
             - check redis status (function)
             - establish the client (function)
             - helper_fun (class)
-                #- make_set (method)
-                #- make_hash (method)
-                - add_value_to_set (method)
-                - add_value_to_hash (method)
-                - delete_hash (method)
-                - delete_sets (method)
+                #- make_set (method) -
+                #- make_hash (method) -
+                - add_value_to_set (method) -
+                - add_value_to_hash (method) -
+                - delete_db (method) -
                 - check_val_exist (method)
-                - get_set_val
-                - get_hash_val (method)
+                - pop_set_val -
+                - get_hash_val (method) -
                     """  
                     Get the url value from the redis hashset
                     return the orginal url to flask server

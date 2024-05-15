@@ -60,13 +60,17 @@ redis_client = create_redis_client()
 
 class Helper_fun():
 
-    def add_value_to_set(set_name, value):
+    def __init__(self,hash_name, set_name):
+        self.hash_name = hash_name
+        self.set_name = set_name
+
+    def add_value_to_set(value):
         """
         The function to add value to the set 
         """
         #add the value to the set 
 
-        res = redis_client.sadd(set_name, set_name)
+        res = redis_client.sadd(self.set_name, set_name)
 
         if res: 
             print("Data added in set succesfully")
@@ -75,13 +79,13 @@ class Helper_fun():
             print("Failed to add data in set")
     
     
-    def add_value_to_hash(hash_name, key , value):
+    def add_value_to_hash(key , value):
         """
         The function to add value to the set 
         """
         #add the value to the set 
 
-        res = redis_client.hset(hash_name,key, value)
+        res = redis_client.hset(self.hash_name,key, value)
 
         if res: 
             print("Data added in set succesfully")
@@ -107,7 +111,32 @@ class Helper_fun():
             print("The db doesn't exists")
 
     
-    def 
+    def pop_set_val():
+        """
+        The funcion to pop a value from the set 
+        """
+
+        return redis_client.spop(self.set_name)
+    
+    
+    def get_hash_value(hash_val):
+        """
+        The function to get the hash value 
+        """
+        return redis_client.hget(self.hash_name, hash_val)
+
+    def check_hash_exist(hash_val):
+        """
+        The function to check the hash value exist in the set and in the redis hash
+        """
+
+        hash_check = redis_client.hexists(self.hash_name, hash_val)
+        
+        if hash_check:
+            return True 
+        
+        else:
+            return False
 
 
 
