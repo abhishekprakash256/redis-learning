@@ -4,7 +4,7 @@ Const -
 
 Folder 
     - redis (folder)
-        - redis-helper (file)
+        - redis_helper (file)
             - check redis status (function)
             - establish the client (function)
             - helper_fun (class)
@@ -23,23 +23,22 @@ Folder
 
     
     - hashing (folder)
-        - make-hashes (file)
+        - make_hashes (file)
             - generate_random_hash (function)
     
-    - generate-tiny-url (folder)
-        - generate_tiny_url (file)
-            - check_redis_set (function)
-                """
-                check the len of the redis set and add value till
-                the len of the set is 10 
-                """
-            - generate_tiny_url_fun (function)
-                """
-                Pop the element from the redis set 
-                run check_redis_set
-                add the elemnet in the redis hash with url as per key and val
-                return the tiny url 
-                """
+    - generate_tiny_url (file)
+        - check_redis_set (function)
+            """
+            check the len of the redis set and add value till
+            the len of the set is 10 
+            """
+        - generate_tiny_url_fun (function)
+            """
+            Pop the element from the redis set 
+            run check_redis_set
+            add the elemnet in the redis hash with url as per key and val
+            return the tiny url 
+            """
 
 
 

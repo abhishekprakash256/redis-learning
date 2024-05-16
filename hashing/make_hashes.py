@@ -16,6 +16,3 @@ def generate_random_hash():
         hash += random.choice("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
     return hash
 
-
-
-print(generate_random_hash())
