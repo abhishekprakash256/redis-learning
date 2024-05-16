@@ -43,7 +43,7 @@ def create_redis_client():
 
         except ImportError:
             # Print error message if pymongo is not installed
-            print("Redsi is not installed on this system.")
+            print("Redis is not installed on this system.")
             return None
 
         except Exception as e:
@@ -60,17 +60,17 @@ redis_client = create_redis_client()
 
 class Helper_fun():
 
-    def __init__(self,hash_name, set_name):
+    def __init__(self, hash_name, set_name):
         self.hash_name = hash_name
         self.set_name = set_name
 
-    def add_value_to_set(value):
+    def add_value_to_set(self,value):
         """
         The function to add value to the set 
         """
         #add the value to the set 
 
-        res = redis_client.sadd(self.set_name, set_name)
+        res = redis_client.sadd(self.set_name, value)
 
         if res: 
             print("Data added in set succesfully")
@@ -79,7 +79,7 @@ class Helper_fun():
             print("Failed to add data in set")
     
     
-    def add_value_to_hash(key , value):
+    def add_value_to_hash(self,key , value):
         """
         The function to add value to the set 
         """
@@ -88,13 +88,13 @@ class Helper_fun():
         res = redis_client.hset(self.hash_name,key, value)
 
         if res: 
-            print("Data added in set succesfully")
+            print("Data added in hash succesfully")
         
         else:
-            print("Failed to add data in set")
+            print("Failed to add data in hash")
 
     
-    def delete_db(db_name):
+    def delete_db(self,db_name):
         """
         The function to delete the hash if exists 
         and then delete the hash
@@ -102,30 +102,39 @@ class Helper_fun():
         # check the hash exists 
         if redis_client.exists(db_name):
             
-            #delete the hash
+            #delete the hash or set 
             redis_client.delete(db_name)
-            print("value added succesfully")
+            print("The db has been deleted succesfully")
         
         else:
 
             print("The db doesn't exists")
 
     
-    def pop_set_val():
+    def pop_set_val(self):
         """
         The funcion to pop a value from the set 
         """
 
-        return redis_client.spop(self.set_name)
+        res = redis_client.spop(self.set_name)
+
+        if res:
+            return res
+        
+        else:
+            return None
     
-    
-    def get_hash_value(hash_val):
+    def get_hash_value(self,hash_val):
         """
         The function to get the hash value 
         """
-        return redis_client.hget(self.hash_name, hash_val)
+        res = redis_client.hget(self.hash_name, hash_val)
+        if res:
+            return res
+        else:
+            return "Value not found"
 
-    def check_hash_exist(hash_val):
+    def check_hash_exist(self,hash_val):
         """
         The function to check the hash value exist in the set and in the redis hash
         """
@@ -141,11 +150,17 @@ class Helper_fun():
 
 
 
+#test the redis 
 
-print(redis_client.exists('test-hash'))
 
-    
+helper_fun = Helper_fun("test-hash","test-set")
 
+helper_fun.add_value_to_hash("name","abhi")
+
+
+#helper_fun.delete_db("test-hash")
+print(helper_fun.get_hash_value("name")) 
+print(helper_fun.check_hash_exist("name2")) 
 
 
 
