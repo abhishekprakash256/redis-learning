@@ -9,8 +9,6 @@ Folder
             - check redis status (function)
             - establish the client (function)
             - helper_fun (class)
-                #- make_set (method) -
-                #- make_hash (method) -
                 - add_value_to_set (method) -
                 - add_value_to_hash (method) -
                 - delete_db (method) -
@@ -54,8 +52,22 @@ Folder
 front -end --
 
     - input field 
-    - 
+    - button to genrate the tiny url 
+    - output field to copy the url 
 
+    - api 
+        inp (orginal_url)
+        out (tiny_url)
+
+
+Flask server -- 
+
+    - tiny_url_redirect(tiny_url)
+      """
+      The function will redirect the tiny url to the main url 
+      """
+    
+    
 
 
 
@@ -68,7 +80,6 @@ reqs --
     generate the value and store in redis hashes and give out 
     
     
-
 
 
 API reqs -- 

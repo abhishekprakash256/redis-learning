@@ -5,10 +5,10 @@ inlcluding the checking of the redis and filling the set to have 10 values reser
 from redis_fun.redis_helper import *
 from hashing.make_hashes import * 
 
+
+#const values
 HASH_NAME = "url-hash"
 SET_NAME = "url-set"
-
-
 
 #set the length of the pregenrated hashes 
 PRE_GEN_HASH_NUM = 10
