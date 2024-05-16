@@ -15,12 +15,20 @@ Folder
                 - add_value_to_hash (method) -
                 - delete_db (method) -
                 - check_val_exist (method)
-                - pop_set_val -
+                - pop_set_val - (method)
                 - get_hash_val (method) -
                     """  
                     Get the url value from the redis hashset
                     return the orginal url to flask server
                     """
+                - get_all_set_val (method)
+                  """
+                  get all the value from the set 
+                  """
+                - get_all_hash_val (method)
+                  """
+                  get all the value from the hash
+                  """
 
     
     - hashing (folder)

@@ -79,13 +79,19 @@ class Helper_fun():
             print("Failed to add data in set")
     
     
-    def add_value_to_hash(self,key , value):
+    def add_value_to_hash(self, key , value):
         """
         The function to add value to the set 
         """
         #add the value to the set 
 
-        res = redis_client.hset(self.hash_name,key, value)
+        res = redis_client.hset(self.hash_name, key, value)
+
+        #testting the code
+        #print(type(key))
+        #print(type(value))
+
+        #print(res)
 
         if res: 
             print("Data added in hash succesfully")
@@ -146,4 +152,26 @@ class Helper_fun():
         
         else:
             return False
+    
+    def get_all_set_val(self):
+        """
+        The function to get all the hash value 
+        """
 
+        set_members = redis_client.smembers(self.set_name)
+        
+        print("Values in Redis set :")
+        
+        for member in set_members:
+            print(member)
+            
+
+    def get_all_hash_val(self):
+        """
+        The function to get all the set value 
+        """
+
+        hash_fields = redis_client.hgetall(self.hash_name)
+        print("\nFields and values in Redis hash ")
+        for field, value in hash_fields.items():
+            print(f"{field}: {value}")

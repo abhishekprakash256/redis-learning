@@ -56,7 +56,3 @@ def print_hashes():
     return set_members
 
 
-print(print_hashes())
-
-print(r.scard("test-add"))
-
