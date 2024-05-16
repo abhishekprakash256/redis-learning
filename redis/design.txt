@@ -24,7 +24,7 @@ Folder
     
     - hashing (folder)
         - make-hashes (file)
-            - make_hashes (function)
+            - generate_random_hash (function)
     
     - generate-tiny-url (folder)
         - generate_tiny_url (file)

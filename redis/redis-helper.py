@@ -147,24 +147,3 @@ class Helper_fun():
         else:
             return False
 
-
-
-
-#test the redis 
-
-
-helper_fun = Helper_fun("test-hash","test-set")
-
-helper_fun.add_value_to_hash("name","abhi")
-
-
-#helper_fun.delete_db("test-hash")
-print(helper_fun.get_hash_value("name")) 
-print(helper_fun.check_hash_exist("name2")) 
-
-
-
-        
-
-
-
