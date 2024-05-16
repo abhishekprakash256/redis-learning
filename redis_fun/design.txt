@@ -1,6 +1,7 @@
 Const -
     url-hash  (hash for redis)
     url-set  (set for redis)
+    PRE_GEN_HASH_NUM = 10 (set the number of pre generated hashes)
 
 Folder 
     - redis (folder)
